@@ -1,0 +1,46 @@
+<html>
+    <script src="https://kit.fontawesome.com/2c4dd84220.js" crossorigin="anonymous"></script>
+   <style>
+    #heading{
+    text-align: center;
+    font-size:50px ;
+    color: burlywood;
+}
+#table
+{
+    border:2px;
+    margin-left:500px;
+    background-color: rgb(129, 129, 123);
+}
+.td{
+    padding: 0 100 0 10 ;
+}
+
+   </style>
+    <body>
+        <h1 id = "heading">
+            <i class="fas fa-address-book"></i>
+            contact list</h1>
+    </body>
+    <p>abahy</p>
+    <table id = "table">
+        <%for(let i of contactlist){ %>
+          <tr>
+         <td class="td"> <%=i.name %> </td>
+        
+         <td class="td"> <%=i.phone %> </td>
+         <td><a href="/delete-contact/?id=<%= i._id %>"><i class="fas fa-circle-xmark"></i></a></td>
+         
+          </tr>
+            <%}%>
+       
+        </table>
+<form action="create-contact" method="post">
+   enter name : <input type="text" name = "name">
+   <br>
+   enter phone no.: <input type="number" name = "phone">
+   <button type ="submit">submit</button>
+</form>
+
+
+</html>
